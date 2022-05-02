@@ -1,4 +1,4 @@
-# <MachineUseVideo>
+# MachineUseVideo
 
 ## サイト概要
 ### サイトテーマ
