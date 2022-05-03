@@ -1,0 +1,2 @@
+class MachineComment < ApplicationRecord
+end
