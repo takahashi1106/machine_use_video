@@ -1,38 +1,6 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'genres/index'
-    get 'genres/create'
-    get 'genres/edit'
-    get 'genres/update'
-  end
-  namespace :admin do
-    get 'machines/index'
-    get 'machines/new'
-    get 'machines/create'
-    get 'machines/show'
-    get 'machines/edit'
-    get 'machines/update'
-  end
-  namespace :admin do
-    get 'users/index'
-    get 'users/edit'
-    get 'users/show'
-  end
-  namespace :public do
-    get 'genres/show'
-  end
-  namespace :public do
-    get 'machine_comments/create'
-  end
-  namespace :public do
-    get 'machines/index'
-    get 'machines/show'
-  end
-  namespace :public do
-    get 'users/show'
-  end
 # 顧客用
-# URL /customers/sign_in ...
+# URL /users/sign_up... or sign_in...
 devise_for :user,skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
@@ -43,5 +11,33 @@ devise_for :user,skip: [:passwords], controllers: {
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+#管理者側のルーティング
+namespace :admin do
+  resources :users,only:[:index, :edit, :show] do
+  end
+
+  resources :machines,only: [:new, :create, :index ,:show, :edit, :update] do
+  end
+
+  resources :genres,only: [:index, :create ,:edit, :update] do
+  end
 end
+
+
+#顧客側のルーティング
+scope module: :public do
+  resources :users,only:[:show, :edit, :update] do
+  end
+
+  resources :machines,only: [:index ,:show] do
+    resources :machine_comments, only: [:create]
+  end
+
+   resources :genres,only: [:show] do
+  end
+
+  end
+end
+
+# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
