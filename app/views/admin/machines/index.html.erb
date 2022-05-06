@@ -1,2 +1,13 @@
-<h1>Admin::Machines#index</h1>
-<p>Find me in app/views/admin/machines/index.html.erb</p>
+<h1>管理者側機械一覧表示</h1>
+
+<% @machines.each do |machine| %>
+
+<%# link_to machine.video, admin_machine_path(machine.id) %></br>
+
+<%= link_to machine.name, admin_machine_path(machine.id) %></br>
+
+<%= machine.explanation %></br>
+
+<%= machine.genre.name %></br>
+
+<% end %>

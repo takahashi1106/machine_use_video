@@ -1,2 +1,18 @@
-<h1>Admin::Machines#edit</h1>
-<p>Find me in app/views/admin/machines/edit.html.erb</p>
+<h1>管理者側機械編集画面</h1>
+<%= form_with model: @machine, url: admin_machine_path do |f| %>
+
+<%#= f.label :'機械動画' %></br>
+<%#= f.text_field :name %></br>
+
+<%= f.label :'機械名' %></br>
+<%= f.text_field :name %></br>
+
+<%= f.label :'機械説明文' %></br>
+<%= f.text_area :explanation %></br>
+
+<%= f.label :'ジャンル名' %></br>
+<%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "ジャンルを選んでください"%></br>
+
+<%= f.submit '保存' %>
+
+<% end %>

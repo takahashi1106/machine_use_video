@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 # 顧客用
-# URL /users/sign_up... or sign_in...
+# URL /user/sign_up... or sign_in...
 devise_for :user,skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
@@ -23,7 +23,6 @@ namespace :admin do
   resources :genres,only: [:index, :create ,:edit, :update] do
   end
 end
-
 
 #顧客側のルーティング
 scope module: :public do

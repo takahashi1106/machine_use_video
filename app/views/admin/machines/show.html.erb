@@ -1,2 +1,10 @@
-<h1>Admin::Machines#show</h1>
-<p>Find me in app/views/admin/machines/show.html.erb</p>
+<h1>管理者側機械詳細画面</h1>
+
+<%= @machine.name %></br>
+
+<%= @machine.explanation %></br>
+
+<%= @machine.genre.name %></br>
+
+<%= link_to '編集', edit_admin_machine_path(@machine.id) %>
+

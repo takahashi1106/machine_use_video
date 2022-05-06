@@ -1,2 +1,14 @@
-<h1>Admin::Users#index</h1>
-<p>Find me in app/views/admin/users/index.html.erb</p>
+<h1>管理者側ユーザー一覧確認画面</h1>
+
+<% @users.each do |user| %>
+
+
+<%= user.last_name %></br>
+
+<%= user.first_name %></br>
+
+<%= user.email %></br>
+
+<%= user.tel_number %></br>
+
+<% end %>

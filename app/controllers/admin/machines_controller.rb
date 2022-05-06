@@ -1,19 +1,37 @@
 class Admin::MachinesController < ApplicationController
-  def index
+
+  def new #new_admin_machine_path
+    @new_machine = Machine.new
   end
 
-  def new
+  def create #admin_machines_path
+    @new_machine = Machine.new(machine_params)
+    @new_machine.save
+    redirect_to admin_machines_path
   end
 
-  def create
+  def index #admin_machines_path
+    @machines = Machine.all
   end
 
-  def show
+  def show #admin_machine_path
+    @machine = Machine.find(params[:id])
   end
 
-  def edit
+  def edit #edit_admin_machine_path
+    @machine = Machine.find(params[:id])
   end
 
-  def update
+  def update #admin_machine_path
+    @machine = Machine.find(params[:id])
+    @machine.update(machine_params)
+    redirect_to admin_machines_path
   end
+
+  private
+
+  def machine_params
+    params.require(:machine).permit(:name,:explanation,:genre_id)
+  end
+
 end

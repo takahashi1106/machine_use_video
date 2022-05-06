@@ -1,10 +1,17 @@
 class Admin::UsersController < ApplicationController
-  def index
+  
+  def index #admin_users_path
+    @users = User.all
   end
 
-  def edit
-  end
+#退会機能を付けるのであれば以下のアクションを追加
 
-  def show
-  end
+  #def show #admin_user_path
+    #@user = User.find(params[:id])
+  #end
+  
+  #def edit #edit_admin_user_path
+    #@user = User.find(params[:id])
+  #end
+
 end
