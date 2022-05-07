@@ -1,10 +1,34 @@
-<h1>管理者側機械詳細画面</h1>
+<div class="container">
+  <h2 class="mt-5">管理者側機械詳細表示</h2>
 
-<%= @machine.name %></br>
+  <div class="row pt-5">
+    <div class="col-3 offset-3">
+      <%#= image_tag @machine.video, size: "400x300" %>
+    </div>
 
-<%= @machine.explanation %></br>
+    <div class="col-5">
+      <table class="table table-borderless offset-2">
+        <tbody>
+          <tr>
+            <td><%= @machine.name %></td>
+          </tr>
 
-<%= @machine.genre.name %></br>
+          <tr>
+            <td><%= @machine.explanation %></td>
+          </tr>
 
-<%= link_to '編集', edit_admin_machine_path(@machine.id) %>
+          <tr>
+            <td><%= @machine.genre.name %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
+    <div class="row px-5 mt-4">
+      <div class="col-2 offset-7">
+        <%= link_to "編集", edit_admin_machine_path(@machine), class: "btn btn-success btn-lg px-5" %>
+      </div>
+    </div>
+
+</div>

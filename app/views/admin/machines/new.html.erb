@@ -1,19 +1,34 @@
-<h1>管理者側新規投稿画面</h1>
+<div class="container">
+  <h2 class="mt-5">管理者側機械新規投稿表示</h2>
 
-<%= form_with model: @new_machine, url: admin_machines_path do |f| %>
+  <div class="row px-5 mx-5">
+    <div class="col-7 offset-3">
+      <%= form_with model: @new_machine, url: admin_machines_path do |f| %>
 
-<%#= f.label :'機械動画' %></br>
-<%#= f.text_field :name %></br>
+      <%#= f.label :'機械動画' %></br>
+      <%#= f.text_field :name %></br>
+      <div class="field form-group row">
+      <%= f.label :型式名, class: "col-3" %>
+      <%= f.text_field :name %>
+      </div>
 
-<%= f.label :'機械名' %></br>
-<%= f.text_field :name %></br>
+      <div class="field form-group row">
+      <%= f.label :機械説明文, class: "col-3" %>
+      <%= f.text_area :explanation %>
+      </div>
 
-<%= f.label :'機械説明文' %></br>
-<%= f.text_area :explanation %></br>
+      <div class="field form-group row">
+      <%= f.label :ジャンル名, class: "col-3" %>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "ジャンルを選んでください"%>
+      </div>
 
-<%= f.label :'ジャンル名' %></br>
-<%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "ジャンルを選んでください"%></br>
+      <div class="field form-group row">
+      <div class="col-7 offset-3">
+      <%= f.submit '新規保存', class: 'btn btn-success' %>
+      </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
-<%= f.submit '保存' %>
-
-<% end %>
+</div>

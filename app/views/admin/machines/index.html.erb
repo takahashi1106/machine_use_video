@@ -1,13 +1,32 @@
-<h1>管理者側機械一覧表示</h1>
+<div class="container">
+  <h2 class="mt-5">管理者側機械一覧表示</h2>
 
-<% @machines.each do |machine| %>
+  <div class="offset-11">
+    <%= link_to(new_admin_machine_path,style:"font-size:40px; color:block;") do %>
+    <i class="fas fa-plus-circle"></i>
+    <% end %>
+  </div>
 
-<%# link_to machine.video, admin_machine_path(machine.id) %></br>
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <%#機械動画%>
+        <th>型式名</th>
+        <th>説明文</th>
+        <th>ジャンル名</th>
+      </tr>
+    </thead>
 
-<%= link_to machine.name, admin_machine_path(machine.id) %></br>
+    <tboddy>
+      <% @machines.each do |machine| %>
+      <tr>
+      <%# link_to machine.video, admin_machine_path(machine.id) %>
+      <td><%= link_to machine.name, admin_machine_path(machine.id) %></td>
+      <td><%= machine.explanation %></td>
+      <td><%= machine.genre.name %></td>
+      </tr>
+      <% end %>
+    </tboddy>
+  </table>
 
-<%= machine.explanation %></br>
-
-<%= machine.genre.name %></br>
-
-<% end %>
+</div>
