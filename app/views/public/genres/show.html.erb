@@ -1,7 +1,11 @@
-<h1>ユーザージャンル別表示画面</h1>
+<div class="container">
+  <h2 class="mt-5">ユーザージャンル別表示画面</h2>
 
 <%= @genre.name %>
 
 <%#= @machine.video %>
-<%= @machine.name %>
+<% @machines.each do |machine| %>
+<%= link_to machine.name, machine_path(machine.id) %>
+<% end %>
 
+</div>

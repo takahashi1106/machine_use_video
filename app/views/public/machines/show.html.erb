@@ -1,9 +1,15 @@
-<h1>ユーザー商品詳細画面</h1>
+<div class="container">
+  <h2 class="mt-5">ユーザー商品詳細画面</h2>
 
-<%#= machin.video %>
+
+<% if @machine.video.attached? %>
+<%= video_tag url_for(@machine.video), size: "300x300", controls: true %></br>
+<% end %>
 
 <%= @machine.name %></br>
 
 <%= @machine.explanation %></br>
 
 <%= @machine.genre.name %>
+
+</div>

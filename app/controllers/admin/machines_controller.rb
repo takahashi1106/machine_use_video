@@ -31,7 +31,7 @@ class Admin::MachinesController < ApplicationController
   private
 
   def machine_params
-    params.require(:machine).permit(:name,:explanation,:genre_id)
+    params.require(:machine).permit(:name,:explanation,:genre_id,:video)
   end
 
 end

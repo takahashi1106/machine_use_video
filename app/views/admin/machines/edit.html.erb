@@ -5,8 +5,11 @@
     <div class="col-6 offset-3">
       <%= form_with model: @machine, url: admin_machine_path do |f| %>
 
-      <%#= f.label :機械動画 %></br>
-      <%#= f.text_field :name %></br>
+      <div class="field form-group row">
+        <%= f.label :機械動画, class: "col-4" %>
+        <%= f.file_field :video, accept: "video/*" %>
+      </div>
+
       <div class="field form-group row">
         <%= f.label :型式名, class: "col-3" %>
         <%= f.text_field :name %>
@@ -27,7 +30,7 @@
           <%= f.submit '保存', class: 'btn btn-primary' %>
         </div>
       </div>
-      
+
       <% end %>
     </div>
   </div>
