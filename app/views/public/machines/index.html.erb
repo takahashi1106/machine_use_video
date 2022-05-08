@@ -1,17 +1,35 @@
-<h1>ユーザー側機械一覧画面</h1>
+<div class="container">
+  <div class="row">
 
-<% @genres.each do |genre| %>
+    <div class="col-2 offset-1 mr-3 mt-5 pt-3">
+      <div class="card mt-3">
+        <h6 class="card-header text-center font-weight-bold">ジャンル検索</h6>
+          <div class=" h-75 card-body">
+            <% @genres.each do |genre| %>
+              <div class="my-4">
+              <%= link_to genre.name, genre_path(genre.id) %></br>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
 
-<%= link_to genre.name, genre_path(genre.id) %></br>
+    <div class="col-8">
+      <div class="mt-5">
+        <div class="d-flex flex-wrap align-items-center">
+          <h3 class="text-center font-weight-bold">ユーザー側機械一覧</h3>
+        </div>
+            <div class="items d-flex flex-wrap align-content-stretch">
+              <% @machines.each do |machine| %>
+                <div class="item-box card border-1 w-25 p-5">
+                  <%# link_to machine.video, machine_path(machine.id) %>
+                  <%= link_to machine.name, machine_path(machine.id) %>
+                  <%#= machine.explanation %>
+                </div>
+              <% end %>
+            </div>
+      </div>
+    </div>
 
-<% end %>
-
-<% @machines.each do |machine| %>
-
-<%# link_to machine.video, machine_path(machine.id) %>
-
-<%= link_to machine.name, machine_path(machine.id) %></br>
-
-<%= machine.explanation %></br>
-
-<% end %>
+  </div>
+</div>

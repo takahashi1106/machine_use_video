@@ -19,12 +19,12 @@
 
     <tboddy>
       <% @machines.each do |machine| %>
-      <tr>
-      <%# link_to machine.video, admin_machine_path(machine.id) %>
-      <td><%= link_to machine.name, admin_machine_path(machine.id) %></td>
-      <td><%= machine.explanation %></td>
-      <td><%= machine.genre.name %></td>
-      </tr>
+        <tr>
+          <%# link_to machine.video, admin_machine_path(machine.id) %>
+          <td><%= link_to machine.name, admin_machine_path(machine.id) %></td>
+          <td><%= machine.explanation %></td>
+          <td><%= machine.genre.name %></td>
+        </tr>
       <% end %>
     </tboddy>
   </table>

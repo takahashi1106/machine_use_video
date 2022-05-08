@@ -1,11 +1,20 @@
-<h1>ユーザー詳細画面</h1>
+<div class="container">
+  <h2 class="mt-5">ユーザー詳細画面</h2>
 
-<%= @user.last_name %></br>
+  <div class="row px-5 mx-5">
+    <div class="col-4 offset-5">
 
-<%= @user.first_name %></br>
+    <%= @user.last_name %>
 
-<%= @user.email %></br>
+    <%= @user.first_name %></br>
 
-<%= @user.tel_number %></br>
+    <%= @user.email %></br>
 
-<%= link_to "編集", edit_user_path %>
+    <%= @user.tel_number %></br>
+
+    <%= link_to "編集", edit_user_path, class: 'btn btn-success' %>
+
+    </div>
+  </div>
+
+</div>
