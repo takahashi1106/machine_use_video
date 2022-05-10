@@ -6,10 +6,13 @@
 <%= video_tag url_for(@machine.video), size: "300x300", controls: true %></br>
 <% end %>
 
+型式</br>
 <%= @machine.name %></br>
 
+説明文</br>
 <%= @machine.explanation %></br>
 
+ジャンル</br>
 <%= @machine.genre.name %></br>
 
 <%= render 'public/favorites/btn', machine: @machine %>
