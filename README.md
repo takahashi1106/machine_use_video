@@ -26,13 +26,13 @@
  - 新入社員に研修する時
 
 ## ER図
-https://app.diagrams.net/#G1zvWavbXdlp9tctgzzG9AtDp6DzLXAqiV
+https://app.diagrams.net/#G1zvWavbXdlp9tctgzzG9AtDp6DzLXAqiV　<br>
 
 ## テーブル提議書
-https://docs.google.com/spreadsheets/d/1wrMxvhNKMduEU9ly5g-WAf_d3nZmV7fZKZjwfcIygDw/edit#gid=1095753504
+https://docs.google.com/spreadsheets/d/1wrMxvhNKMduEU9ly5g-WAf_d3nZmV7fZKZjwfcIygDw/edit#gid=1095753504　<br>
 
 ## 設計書
-https://docs.google.com/spreadsheets/d/1VyCL5Dg7f7BKgvVrKGrM_NZV0kdAnZ104DAv4Qgz5aY/edit#gid=275384719
+https://docs.google.com/spreadsheets/d/1VyCL5Dg7f7BKgvVrKGrM_NZV0kdAnZ104DAv4Qgz5aY/edit#gid=275384719 <br>
 
 ## 開発環境
 - OS：Linux(CentOS)
