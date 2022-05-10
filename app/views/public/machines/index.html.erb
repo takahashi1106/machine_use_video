@@ -23,7 +23,8 @@
               <% @machines.each do |machine| %>
                 <div class="item-box card border-1 w-25 p-5">
                   <%# link_to machine.video, machine_path(machine.id) %>
-                  <%= link_to machine.name, machine_path(machine.id) %>
+                  <%= link_to machine.name, machine_path(machine.id) %></br>
+                  <%= render 'public/favorites/btn', machine: machine %>
                   <%#= machine.explanation %>
                 </div>
               <% end %>

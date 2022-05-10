@@ -34,7 +34,8 @@ scope module: :public do
   end
 
   resources :machines,only: [:index ,:show] do
-    resources :machine_comments, only: [:create]
+    resource :favorites, only: [:create, :destroy]
+      resources :machine_comments, only: [:create]
   end
 
    resources :genres,only: [:show] do
