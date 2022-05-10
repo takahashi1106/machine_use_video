@@ -7,5 +7,6 @@ class Public::MachinesController < ApplicationController
 
   def show #machine_path
     @machine = Machine.find(params[:id])
+    @machine_comment = MachineComment.new
   end
 end
