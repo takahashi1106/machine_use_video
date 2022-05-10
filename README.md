@@ -7,7 +7,7 @@
 ### テーマを選んだ理由
  前職で機械のレンタルを行う会社で働いており、下記の経験を解決したいと思いこのテーマを選びました。 <br>
  - 取引先から使用方法を教えて欲しいと言う問い合わせにすぐに返答ができず、調べてもイメージが思い出せず曖昧な説明をする事しかできなかった。 <br>
- - 新入社員だった私は膨大な数の機械の使用方法を100％覚える事ができない、また扱う機械は営業所以外にもたくさんあり実際にどう動くのか分からなかった。 <br> 
+ - 新入社員だった私は膨大な数の機械の使用方法を100％覚える事ができない、また扱う機械は営業所以外にもたくさんあり実際にどう動くのか分からなかった。 <br>
  - 当時の同期も同じような事を話していた。 <br>
 
 このサイトを活用する事で機械の知識を蓄え自信を持ってスピーディーな対応を行う事ができます。
@@ -26,13 +26,13 @@
  - 新入社員に研修する時
 
 ## ER図
-https://app.diagrams.net/#G1zvWavbXdlp9tctgzzG9AtDp6DzLXAqiV　<br>
+https://app.diagrams.net/#G1zvWavbXdlp9tctgzzG9AtDp6DzLXAqiV<br>
 
 ## テーブル提議書
-https://docs.google.com/spreadsheets/d/1wrMxvhNKMduEU9ly5g-WAf_d3nZmV7fZKZjwfcIygDw/edit#gid=1095753504　<br>
+https://docs.google.com/spreadsheets/d/1wrMxvhNKMduEU9ly5g-WAf_d3nZmV7fZKZjwfcIygDw/edit#gid=1095753504<br>
 
 ## 設計書
-https://docs.google.com/spreadsheets/d/1VyCL5Dg7f7BKgvVrKGrM_NZV0kdAnZ104DAv4Qgz5aY/edit#gid=275384719 <br>
+https://docs.google.com/spreadsheets/d/1VyCL5Dg7f7BKgvVrKGrM_NZV0kdAnZ104DAv4Qgz5aY/edit#gid=275384719<br>
 
 ## 開発環境
 - OS：Linux(CentOS)
