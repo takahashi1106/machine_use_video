@@ -26,7 +26,7 @@
  - 新入社員に研修する時
 
 ## 設計書
-<...>
+[アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1VyCL5Dg7f7BKgvVrKGrM_NZV0kdAnZ104DAv4Qgz5aY/edit#gid=275384719)
 
 ## 開発環境
 - OS：Linux(CentOS)
