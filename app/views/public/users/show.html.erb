@@ -12,7 +12,9 @@
 
     <%= @user.tel_number %></br>
 
-    <%= link_to "編集", edit_user_path, class: 'btn btn-success' %>
+    <%= link_to "編集", edit_user_path, class: 'btn btn-success' %></br>
+    
+    <%= link_to "いいねした動画", like_user_path(@user.id) %>
 
     </div>
   </div>

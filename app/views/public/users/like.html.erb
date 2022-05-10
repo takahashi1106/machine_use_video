@@ -1,0 +1,15 @@
+<% @likes.each do |like| %>
+
+<% if like.video.attached? %>
+<%= video_tag url_for(like.video), size: "300x300", controls: true %></br>
+<% end %>
+
+<%= like.name %></br>
+
+<%= like.explanation %></br>
+
+<%= like.genre.name %></br>
+
+<%= render 'public/favorites/btn', machine: like %></br>
+
+<% end %>

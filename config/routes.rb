@@ -31,12 +31,15 @@ end
 #顧客側のルーティング
 scope module: :public do
   resources :users,only:[:show, :edit, :update] do
+    member do #idが必要なため、member
+    get :like #ユーザーのいいね一覧
+  end
   end
 
   resources :machines,only: [:index ,:show] do
-    resource :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy,]
       resources :machine_comments, only: [:create]
-  end
+end
 
    resources :genres,only: [:show] do
   end

@@ -13,4 +13,8 @@ class Public::FavoritesController < ApplicationController
     favorite.destroy
     redirect_back(fallback_location: root_path)
   end
+  
+  def like
+  end
+  
 end
