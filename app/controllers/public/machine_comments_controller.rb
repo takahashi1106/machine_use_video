@@ -11,10 +11,16 @@ class Public::MachineCommentsController < ApplicationController
 
   def destroy #machine_machine_comment_path
     comment = MachineComment.find(params[:id])
-    comment.destroy
-    redirect_to machine_path(params[:machine_id])
+    if user_signed_in?
+      comment.destroy
+      redirect_to machine_path(params[:machine_id])
+    elsif admin_signed_in?
+      comment.destroy
+      redirect_to admin_machine_path(params[:machine_id])
+    end
   end
-   private
+
+  private
 
   def machine_comment_params
     params.require(:machine_comment).permit(:comment)
