@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
-   before_action :set_user, only: [:show, :edit, :update, :like]
+  before_action :set_user, only: [:show, :edit, :update, :like]
+  before_action :authenticate_user!
 
   def show #user_path
   end

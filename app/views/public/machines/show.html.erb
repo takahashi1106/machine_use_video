@@ -1,6 +1,5 @@
 <div class="container">
-  <h2 class="mt-5">ユーザー商品詳細画面</h2>
-
+<h2 class="mt-5">ユーザー商品詳細画面</h2>
 
 <% if @machine.video.attached? %>
 <%= video_tag url_for(@machine.video), size: "300x300", controls: true %></br>
@@ -18,12 +17,10 @@
 <%= render 'public/favorites/btn', machine: @machine %>
 
 <div>
-<% @machine.machine_comments.each do |machine_comment| %>
-<%= machine_comment.user.last_name %><%= machine_comment.user.first_name %></br>
+<% @machine.machine_comments.each do |machine_comment| %><%= machine_comment.user.last_name %><%= machine_comment.user.first_name %></br>
 <%= machine_comment.created_at.strftime('%Y/%m/%d') %></br>
 <%= machine_comment.comment %>
-<% if machine_comment.user == current_user %>
-<%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete %></br>
+<% if machine_comment.user == current_user %><%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete %></br>
 <% end %>
 <% end %>
 </div>

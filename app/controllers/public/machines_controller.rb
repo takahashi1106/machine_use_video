@@ -1,5 +1,6 @@
 class Public::MachinesController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index #machines_path
     @machines = Machine.all
     @genres = Genre.all
