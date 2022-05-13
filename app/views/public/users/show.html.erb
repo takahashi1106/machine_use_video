@@ -13,10 +13,16 @@
     <%= @user.tel_number %></br>
 
     <%= link_to "編集", edit_user_path, class: 'btn btn-success' %></br>
-    
-    <%= link_to "いいねした動画", like_user_path(@user.id) %>
+
+    <%= link_to "いいねした動画", like_user_path(current_user) %>
 
     </div>
   </div>
+
+    <div>
+      <% if user_signed_in? && @user.id == current_user.id %>
+      <%= link_to "退会", unsubscribe_user_path(current_user), class: "btn btn-outline-danger" %>
+      <% end %>
+    </div>
 
 </div>

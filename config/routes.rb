@@ -32,7 +32,9 @@ end
 scope module: :public do
   resources :users,only:[:show, :edit, :update] do
     member do #idが必要なため、member
-    get :like #ユーザーのいいね一覧
+    get   :like #ユーザーのいいね一覧
+    get   :unsubscribe
+    patch :withdraw
   end
   end
 
