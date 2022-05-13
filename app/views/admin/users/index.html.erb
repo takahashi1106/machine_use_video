@@ -4,20 +4,26 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>会員ID</th>
-        <th>氏名</th>
+        <th>フルネーム</th>
         <th>メールアドレス</th>
         <th>電話番号</th>
+        <th>ステータス</th>
       </tr>
     </thead>
 
     <tbody>
       <% @users.each do |user| %>
       <tr>
-        <td><%= user.last_name %></td>
-        <td><%= user.first_name %></td>
+        <td><%= link_to user.user_name, admin_user_path(user.id) %></td>
         <td><%= user.email %></td>
         <td><%= user.tel_number %></td>
+        <td>
+          <% if user.is_deleted == true %>
+          <span class="text-danger">退会済</span>
+          <% else %>
+          <span class="text-success">有効</span>
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>

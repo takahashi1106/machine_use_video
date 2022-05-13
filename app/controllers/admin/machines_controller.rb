@@ -9,8 +9,8 @@ class Admin::MachinesController < ApplicationController
   def create #admin_machines_path
     @new_machine = Machine.new(machine_params)
     if @new_machine.save
-      redirect_to admin_machines_path
       flash[:success] = "新規保存しました。"
+      redirect_to admin_machines_path
     else
       render 'new'
     end
@@ -28,8 +28,8 @@ class Admin::MachinesController < ApplicationController
 
   def update #admin_machine_path
     if @machine.update(machine_params)
-      redirect_to admin_machines_path
       flash[:success] = "変更しました。"
+      redirect_to admin_machines_path
     else
       render 'edit'
     end

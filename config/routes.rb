@@ -18,7 +18,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
 #管理者側のルーティング
 namespace :admin do
-  resources :users,only:[:index, :edit, :show] do
+  resources :users,only:[:index, :show, :edit, :update] do
   end
 
   resources :machines,only: [:new, :create, :index ,:show, :edit, :update] do
