@@ -41,7 +41,7 @@ class Public::SessionsController < Devise::SessionsController
     # 取得したアカウントのパスワードと入力されたパスワードが一致してるかを判別 #trueの場合
     if @user
       if @user.valid_password?(params[:user][:password]) && !@user.active_for_authentication?
-        flash[:danger] = 'お客様は退会済みです。申し訳ございませんが、別のメールアドレスをお使いください。'
+        flash[:alert] = 'お客様は退会済みです。申し訳ございませんが、別のメールアドレスをお使いください。'
         redirect_to new_user_session_path
       end
     end
