@@ -37,9 +37,12 @@ scope module: :public do
   end
 
   resources :machines,only: [:index ,:show] do
+    collection do
+    get 'search'
+  end
     resource :favorites, only: [:create, :destroy]
       resources :machine_comments, only: [:create, :destroy]
-end
+  end
 
    resources :genres,only: [:show] do
   end
