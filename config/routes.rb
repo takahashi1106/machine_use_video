@@ -11,7 +11,7 @@ devise_for :user,skip: [:passwords], controllers: {
 }
 #ゲストユーザー
 devise_scope :user do
-  post 'user/guest_sign_in', to: 'public/sessions#guest_sign_in'
+  post 'user/guest_sign_in'　=> 'public/sessions#guest_sign_in'
 end
 
 # 管理者用
