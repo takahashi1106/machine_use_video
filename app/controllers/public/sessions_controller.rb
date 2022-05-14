@@ -33,6 +33,13 @@ class Public::SessionsController < Devise::SessionsController
     about_path
   end
 
+  def guest_sign_in
+    user = User.guest
+    sign_in user
+    flash[:notice] =  'guestuserでログインしました。'
+    redirect_to machines_path
+  end
+
   protected
     # 退会しているかを判断するメソッド
   def reject_user

@@ -28,3 +28,7 @@
 <div>
 管理者は<%= link_to "こちらから", new_admin_session_path %>
 </div>
+
+<div>
+<%= link_to 'ゲストログイン（閲覧用）', user_guest_sign_in_path, method: :post %>
+</div>

@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :like,:withdraw]
+  before_action :set_user, only: [:show, :edit, :update, :like,:withdraw,:ensure_guest_user]
+  before_action :ensure_guest_user, only: [:edit]
 
   def show #user_path
   end
@@ -31,7 +32,7 @@ class Public::UsersController < ApplicationController
     @user.update(is_deleted: true)
     #ログアウトさせる
     reset_session
-    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    flash[:notice] = 'ありがとうございました。またのご利用を心よりお待ちしております。'
     redirect_to root_path
   end
 
@@ -44,6 +45,13 @@ class Public::UsersController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def ensure_guest_user
+    if @user.user_name == "guestuser"
+      flash[:alert] = 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
+      redirect_to user_path(current_user)
+    end
   end
 
 end

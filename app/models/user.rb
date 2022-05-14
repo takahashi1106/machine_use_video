@@ -15,4 +15,10 @@ class User < ApplicationRecord
     super && (self.is_deleted == false)
   end
 
+  def self.guest
+    find_or_create_by!(last_name: 'guest', first_name: 'user', email: 'guest@example.com', tel_number: '000-0000-0000') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
 end
