@@ -11,9 +11,8 @@ devise_for :user,skip: [:passwords], controllers: {
 }
 #ゲストユーザー
 devise_scope :user do
-  post 'user/guest_sign_in'　=> 'public/sessions#guest_sign_in'
+  post 'user/guest_sign_in' => 'public/sessions#guest_sign_in'
 end
-
 # 管理者用
 # URL /admin/sign_in ...
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
@@ -43,9 +42,9 @@ scope module: :public do
   end
 
   resources :machines,only: [:index ,:show] do
-    collection do
-    get 'search'
-  end
+    #collection do
+    #get 'search'
+  #end
     resource :favorites, only: [:create, :destroy]
       resources :machine_comments, only: [:create, :destroy]
   end

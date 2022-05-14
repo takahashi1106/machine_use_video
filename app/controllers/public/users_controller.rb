@@ -10,8 +10,7 @@ class Public::UsersController < ApplicationController
   end
 
   def update #user_path PATCH
-    if @user == current_user
-      @user.update(user_params)
+    if @user.update(user_params)
       redirect_to user_path(current_user)
       flash[:success] = "会員情報を更新しました。"
     else

@@ -1,18 +1,17 @@
 <div class="container">
 <h2 class="mt-5">ユーザー商品詳細画面</h2>
 
+<%#= render 'layouts/errors', obj: @machine %>
+
 <% if @machine.video.attached? %>
 <%= video_tag url_for(@machine.video), size: "300x300", controls: true %></br>
 <% end %>
 
-型式</br>
-<%= @machine.name %></br>
+型式 : <%= @machine.name %></br>
 
-説明文</br>
-<%= @machine.explanation %></br>
+説明文 : <%= @machine.explanation %></br>
 
-ジャンル</br>
-<%= @machine.genre.name %></br>
+ジャンル : <%= @machine.genre.name %></br>
 
 <%= render 'public/favorites/btn', machine: @machine %>
 

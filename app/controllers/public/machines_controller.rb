@@ -18,9 +18,9 @@ class Public::MachinesController < ApplicationController
     @machine_comment = MachineComment.new
   end
 
-  def search #search_machines_path
+  #def search #search_machines_path
     # タグ検索
     #@tag_search = Machine.tagged_with(params[:search])
-  end
+  #end
 
 end

@@ -3,19 +3,19 @@
 
   <div class="row px-5 mx-5">
     <div class="col-6 offset-3">
-      <%= form_with model: @genre, url: admin_genre_path do |f| %>
+      <%= render 'layouts/errors', obj: @genre %>
+        <%= form_with model: @genre, url: admin_genre_path do |f| %>
+          <div class="field form-group row">
+            <%= f.label :ジャンル名, class: "col-4" %>
+            <%= f.text_field :name %>
+          </div>
 
-      <div class="field form-group row">
-      <%= f.label :ジャンル名, class: "col-4" %>
-      <%= f.text_field :name %>
-      </div>
-
-      <div class="field form-group row">
-      <div class="col-7 offset-4">
-      <%= f.submit '保存', class: 'btn btn-primary' %>
-      </div>
-      </div>
-      <% end %>
+          <div class="field form-group row">
+            <div class="col-7 offset-4">
+              <%= f.submit '保存', class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
     </div>
   </div>
 

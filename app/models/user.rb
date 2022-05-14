@@ -5,7 +5,12 @@ class User < ApplicationRecord
            :recoverable, :rememberable, :validatable
 
   has_many :machine_comments, dependent: :destroy
-  has_many :favorites, dependent: :destroy
+  has_many :favorites,        dependent: :destroy
+
+  validates :last_name,  presence: true
+  validates :first_name, presence: true
+  validates :email,      presence: true
+  validates :tel_number, presence: true
 
   def user_name
     last_name + first_name

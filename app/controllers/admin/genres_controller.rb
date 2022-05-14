@@ -13,7 +13,6 @@ class Admin::GenresController < ApplicationController
       flash[:success] = "新規保存しました。"
       redirect_to admin_genres_path
     else
-      @new_genre = Genre.new
       @genres = Genre.all
       render 'index'
     end
