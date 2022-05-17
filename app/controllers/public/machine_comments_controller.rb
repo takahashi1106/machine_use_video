@@ -5,8 +5,13 @@ class Public::MachineCommentsController < ApplicationController
     comment = MachineComment.new(machine_comment_params)
     comment.user_id = current_user.id
     comment.machine_id = machine.id
-    comment.save
-    redirect_to machine_path(params[:machine_id])
+    if comment.save
+      redirect_to machine_path(params[:machine_id])
+    else @error_comment = comment
+      @machine = Machine.find(params[:machine_id])
+      @machine_comment = MachineComment.new
+      render 'public/machines/show'
+    end
   end
 
   def destroy #machine_machine_comment_path
