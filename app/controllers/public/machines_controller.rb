@@ -8,7 +8,7 @@ class Public::MachinesController < ApplicationController
     # キーワード検索
     @search = Machine.ransack(params[:q])
     #distinct: trueは重複したデータを除外
-    @machiness = @search.result(distinct: true)
+    @machiness = @search.result(distinct: true)#.limit(10)
     # タグ検索
     #@tag_search = Machine.tagged_with(params[:search])
   end
