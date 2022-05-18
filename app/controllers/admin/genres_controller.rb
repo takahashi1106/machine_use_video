@@ -4,7 +4,7 @@ class Admin::GenresController < ApplicationController
 
   def index #admin_genres_path
     @new_genre = Genre.new
-    @genres = Genre.all
+    @genres = Genre.page(params[:page]).per(10)
   end
 
   def create #admin_genres_path
@@ -13,7 +13,7 @@ class Admin::GenresController < ApplicationController
       flash[:success] = "新規保存しました。"
       redirect_to admin_genres_path
     else
-      @genres = Genre.all
+      @genres = Genre.page(params[:page]).per(10)
       render 'index'
     end
   end

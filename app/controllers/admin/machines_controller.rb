@@ -17,7 +17,7 @@ class Admin::MachinesController < ApplicationController
   end
 
   def index #admin_machines_path
-    @machines = Machine.all
+    @machines = Machine.page(params[:page]).per(10)
   end
 
   def show #admin_machine_path

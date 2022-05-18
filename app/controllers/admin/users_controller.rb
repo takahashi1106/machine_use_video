@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_action :admin_set_user, only: [:show, :edit, :update]
 
   def index #admin_users_path
-    @users = User.all
+    @users = User.page(params[:page]).per(10)
   end
 
   def show #admin_user_path
