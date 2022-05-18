@@ -24,7 +24,9 @@
                 <% @machines.each do |machine| %>
                   <div class="item-box card border-1 w-30 p-5">
                     <%= link_to machine.name, machine_path(machine.id) %></br>
-                    <%= render 'public/favorites/btn', machine: machine %></br>
+                      <div class="favorite_buttons_<%= machine.id %>">
+                      <%= render "public/favorites/btn", machine: machine %>
+                  　　</div></br>
                     コメント件数：<%= machine.machine_comments.count %></br>
                   </div>
                 <% end %>

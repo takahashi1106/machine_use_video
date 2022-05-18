@@ -1,10 +1,10 @@
 <% if machine.favorited_by?(current_user) %>
-  <%= link_to machine_favorites_path(machine), method: :delete do %>
+  <%= link_to machine_favorites_path(machine), method: :delete, remote: true do %>
     <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
     <%= machine.favorites.count %> いいね
   <% end %>
 <% else %>
-  <%= link_to machine_favorites_path(machine), method: :post do %>
+  <%= link_to machine_favorites_path(machine), method: :post, remote: true do %>
     <i class="fas fa-heart" aria-hidden="true"></i>
     <%= machine.favorites.count %> いいね
   <% end %>
