@@ -3,7 +3,7 @@ class Public::MachinesController < ApplicationController
   #before_action :search
 
   def index #machines_path
-    @machines = Machine.page(params[:page]).per(2)
+    @machines = Machine.page(params[:page]).per(6)
     @genres = Genre.all
     # キーワード検索
     @search = Machine.ransack(params[:q])

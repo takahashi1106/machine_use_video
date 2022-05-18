@@ -2,6 +2,7 @@
 <%= machine_comment.user.user_name %></br>
 <%= machine_comment.created_at.strftime('%Y/%m/%d') %></br>
 <%= machine_comment.comment %>
-<% if machine_comment.user == current_user %><%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete, remote: true %></br>
+<% if machine_comment.user == current_user %>
+<%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete %></br>
 <% end %>
 <% end %>
