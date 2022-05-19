@@ -21,6 +21,7 @@ class Public::MachineCommentsController < ApplicationController
       redirect_to machine_path(params[:machine_id])
     elsif admin_signed_in?
       comment.destroy
+      flash[:alert] = "削除しました。"
       redirect_to admin_machine_path(params[:machine_id])
     end
   end
