@@ -21,7 +21,6 @@ class Admin::MachinesController < ApplicationController
   end
 
   def show #admin_machine_path
-    @machine_comment = MachineComment.new
   end
 
   def edit #edit_admin_machine_path
