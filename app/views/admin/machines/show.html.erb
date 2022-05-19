@@ -33,13 +33,16 @@
       </div>
     </div>
 
-      <div>
+
+    <div>
+      <% if admin_signed_in? %>
         <% @machine.machine_comments.each do |machine_comment| %>
           <%= machine_comment.user.last_name %><%= machine_comment.user.first_name %></br>
           <%= machine_comment.created_at.strftime('%Y/%m/%d') %></br>
           <%= machine_comment.comment %>
           <%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete %></br>
         <% end %>
-      </div>
-    
+      <% end %>
+    </div>
+
 </div>
