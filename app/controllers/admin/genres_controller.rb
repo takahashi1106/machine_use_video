@@ -26,7 +26,7 @@ class Admin::GenresController < ApplicationController
       flash[:success] = "変更しました。"
       redirect_to admin_genres_path
     else
-      render 'edit'
+      redirect_to edit_admin_genre_path
     end
   end
 

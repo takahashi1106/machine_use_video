@@ -1,8 +1,8 @@
 <div class="container">
   <h2 class="mt-5">編集画面</h2>
     <div class="mt-5">
-      <div class="row justify-content-center">
-        <%= render 'layouts/errors', obj: @machine %>
+      <%= render 'layouts/errors', obj: @machine %>
+        <div class="row justify-content-center">
           <%= form_with model: @machine, url: admin_machine_path do |f| %>
             <div class="form-group row">
               <div class="col-5">
