@@ -1,23 +1,23 @@
 <div class="container">
   <h2 class="mt-5"><%= @user.user_name %>さんの会員詳細</h2>
+    <div class="mt-4">
+      <div class="center-block">
+        <div>
+          性: <%= @user.last_name %></br>
+          名: <%= @user.first_name %></br>
+          メール: <%= @user.email %></br>
+          電話番号: <%= @user.tel_number %></br>
+          <% if @user.is_deleted == true %>
+            <span class="text-danger">退会済</span>
+            <% elsif @user.is_deleted == false %>
+            <span class="text-success">有効会員</span>
+          <% end %>
+        </div>
+      </div>
 
-<%= @user.last_name %></br>
+        <div>
+        <%= link_to "編集する",edit_admin_user_path(@user), class: "btn btn-success" %>
+        </div>
 
-<%= @user.first_name %></br>
-
-<%= @user.email %></br>
-
-<%= @user.tel_number %></br>
-
-<% if @user.is_deleted == true %>
-<span class="text-danger">退会済</span>
-<% elsif @user.is_deleted == false %>
-<span class="text-success">有効会員</span>
-<% end %>
-
-<div>
-<%= link_to "編集する",edit_admin_user_path(@user), class: "btn btn-success" %>
-</div>
-
-</div>
+    </div>
 </div>

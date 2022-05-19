@@ -1,9 +1,8 @@
 <div class="container">
   <h2 class="mt-5"><%= @user.user_name %>さんの会員詳細</h2>
-  <%= render 'layouts/errors', obj: @user %>
-    <%= form_with model: @user, url: admin_user_path, method: :patch do |f| %>
-      <div class="row">
-        <div class="col-xs-8 mt-3">
+    <%= render 'layouts/errors', obj: @user %>
+      <%= form_with model: @user, url: admin_user_path, method: :patch do |f| %>
+        <div class="mt-5">
           <table class="table table-borderless">
             <tbody>
               <tr>
@@ -18,17 +17,16 @@
                 </td>
               </tr>
             <tr>
-                <td>メールアドレス</td>
-                <td>
-                  <div class="form-group">
-                    <div class="form-inline">
-                      <%= f.text_field :email, class: "col-sm-10 form-control" %>
-                    </div>
+              <td>メールアドレス</td>
+              <td>
+                <div class="form-group">
+                  <div class="form-inline">
+                    <%= f.text_field :email, class: "col-sm-10 form-control" %>
                   </div>
+                </div>
                 </td>
               </tr>
               <tr>
-    
                 <td>電話番号</td>
                 <td>
                   <div class="form-group">
@@ -40,22 +38,32 @@
               </tr>
                 <td>会員ステータス</td>
                 <td>
-                  <%= f.radio_button :is_deleted, false %>
-                　<%= f.label :有効 %>
-                  　<%= f.radio_button :is_deleted, true %>
-                　<%= f.label :退会 %>
+                  <div class="form-group">
+                    <div class="form-inline">
+                      <%= f.radio_button :is_deleted, false %>
+                    　<%= f.label :有効 %>
+                      　<%= f.radio_button :is_deleted, true %>
+                    　<%= f.label :退会 %>
+                  　  </div>
+                  </div>
                 </td>
               </tr>
               <tr>
                 <td></td>
                 <td>
-                  <%= f.submit '変更を保存する' ,class: "btn btn-primary" %>
-                  <%= link_to "戻る", admin_user_path, class: "btn btn-info" %>
+                  <div class="row justify-content-center">
+                    <div class="col-1">
+                     <%= f.submit '変更を保存する' ,class: "btn btn-primary" %>
+                    </div>
+                      <div class="col-5">
+                        <%= link_to "戻る", admin_user_path, class: "btn btn-info" %>
+                      </div>
+                  </div>
+
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-      </div>
     <% end %>
 </div>
