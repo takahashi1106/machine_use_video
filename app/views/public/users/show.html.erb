@@ -1,32 +1,20 @@
 <div class="container">
   <h2 class="mt-5">ユーザー詳細画面</h2>
 
-  <div class="row px-5 mx-5">
-    <div class="col-4 offset-5">
-
-    <%= @user.last_name %>
-
-    <%= @user.first_name %></br>
-
-    <%= @user.email %></br>
-
-    <%= @user.tel_number %></br>
-
-    <% if @user.user_name!= "guestuser" %>
     <div>
-      <%= link_to '編集',edit_user_path(@user), class: 'btn btn-success' %></br>
-    </div>
-    <% end %>
-
-    <%= link_to "いいねした動画", like_user_path(current_user) %>
-
-    </div>
-  </div>
-
-    <div>
-      <% if user_signed_in? && @user.id == current_user.id %>
-      <%= link_to "退会", unsubscribe_user_path(current_user), class: "btn btn-outline-danger" %>
-      <% end %>
+      <%= @user.last_name %>
+      <%= @user.first_name %></br>
+      <%= @user.email %></br>
+      <%= @user.tel_number %></br>
     </div>
 
+      <div>
+        <% if @user.user_name!= "guestuser" %>
+          <%= link_to '編集',edit_user_path(@user), class: 'btn btn-success' %></br>
+            <% if user_signed_in? && @user.id == current_user.id %>
+              <%= link_to "退会", unsubscribe_user_path(current_user), class: "btn btn-outline-danger" %>
+            <% end %>
+        <% end %>
+      </div>
+    <div><%= link_to "いいねした動画", like_user_path(current_user) %></div>
 </div>
