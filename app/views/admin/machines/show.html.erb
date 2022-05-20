@@ -21,21 +21,39 @@
               <%= link_to "編集", edit_admin_machine_path(@machine), class: "btn btn-success btn-lg px-5" %>
               </div>
           </div>
-      </div>
-    </div>
 
-    <div class="mt-5">
-      <div class="row">
-        <div class="col-lg-6">
-          <% if admin_signed_in? %>
-            <% @machine.machine_comments.each do |machine_comment| %>
-              <%= machine_comment.created_at.strftime('%Y/%m/%d') %>
-              <%= machine_comment.user.user_name %>
-              <%= machine_comment.comment %>
-              <%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete, "data-confirm" => '本当に削除しますか？',class: "text-danger" %></br>
-            <% end %>
-          <% end %>
+          <div class="mt-5">
+            <div class="row">
+              <div class="col-lg-12">
+                <table>
+                  <tbody>
+                    <% if admin_signed_in? %>
+                      <% @machine.machine_comments.each do |machine_comment| %>
+                        <tr>
+                          <th>
+                            <div class="text-left">
+                              <%= machine_comment.created_at.strftime('%Y/%m/%d') %> : <%= machine_comment.user.user_name %>
+                            </div>
+                          </th>
+                            <td>
+                              <div class="text-left">
+                              : <%= machine_comment.comment %>
+                              </div>
+                            </td>
+                              <td>
+                                <div class="text-left">
+                                <%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete, "data-confirm" => '本当に削除しますか？',class: "text-danger" %>
+                                </div>
+                              </td>
+                          </tr>
+                      <% end %>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
     </div>
 </div>

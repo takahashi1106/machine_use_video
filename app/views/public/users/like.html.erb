@@ -10,10 +10,13 @@
               <% end %>
                 <div class="btn-group">
                   <div class="card-text">
-                  <%= like.genre.name %> : <%= like.name %> <%= render 'public/favorites/btn', machine: like %>
-                    <div class="d-flex justify-content-between align-items-center">
-                    <%= like.explanation %>
-                    </div>
+                    <%= like.genre.name %> : <%= like.name %>
+                      <div class="favorite_buttons_<%= like.id %>">
+                      <%= render "public/favorites/btn", machine: like %>
+                      </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                        <%= like.explanation %>
+                        </div>
                   </div>
                 </div>
             </div>
