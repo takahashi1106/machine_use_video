@@ -1,30 +1,37 @@
 <div class="container">
-<h2 class="mt-5">ユーザー商品詳細画面</h2>
+  <h2 class="mt-5">機械詳細画面</h2>
+    <div class="mt-5">
+      <div class="row">
+        <div class="col-lg-5">
+        <% if @machine.video.attached? %>
+        <%= video_tag url_for(@machine.video), size: "300x300", controls: true %>
+        <% end %>
+        </div>
+          <div class="col-lg-7">
+            <table class="table table-borderless">
+              <tbody>
+                <tr><th></th><td></td></tr>
+                <tr><th></th><td></td></tr>
+                <tr><th>型式</th><td><%= @machine.name %></td></tr>
+                <tr><th>説明文</th><td><%= @machine.explanation %></td></tr>
+                <tr><th>ジャンル名</th><td><%= @machine.genre.name %></td></tr>
+                <tr></tr><th>いいね</th><td class="favorite_buttons_<%= @machine.id %>"><%= render "public/favorites/btn", machine: @machine %></td></tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
 
-<%= render 'layouts/errors', obj: @error_comment %>
-
-<% if @machine.video.attached? %>
-<%= video_tag url_for(@machine.video), size: "300x300", controls: true %></br>
-<% end %>
-
-型式 : <%= @machine.name %></br>
-
-説明文 : <%= @machine.explanation %></br>
-
-ジャンル : <%= @machine.genre.name %></br>
-
-<div class="favorite_buttons_<%= @machine.id %>">
-<%= render "public/favorites/btn", machine: @machine %>
-</div>
-
-<!--div class="machine_comments_<%#= @machine_id %>"-->
-<div>
-<%= render 'public/machine_comments/comment' %>
-</div>
-
-<!--div class="machine_fomrs_<%#= @machine.id %>"-->
-<div>
-<%= render 'public/machine_comments/form' %>
-</div>
+    <div class="mt-5">
+      <%= render 'layouts/errors',obj: @error_comment %>
+        <div class="row">
+          <div class="col-lg-12">
+          <%= render 'public/machine_comments/comment' %>
+          </div>
+            <div class="col-lg-12">
+            <%= render 'public/machine_comments/form' %>
+            </div>
+        </div>
+    </div>
 
 </div>

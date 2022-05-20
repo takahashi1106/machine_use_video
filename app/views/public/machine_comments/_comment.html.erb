@@ -1,8 +1,26 @@
-<% @machine.machine_comments.each do |machine_comment| %>
-<%= machine_comment.user.user_name %></br>
-<%= machine_comment.created_at.strftime('%Y/%m/%d') %></br>
-<%= machine_comment.comment %>
-<% if machine_comment.user == current_user %>
-<%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete %></br>
-<% end %>
-<% end %>
+  <table>
+    <tbody>
+        <% @machine.machine_comments.each do |machine_comment| %>
+          <tr>
+            <th>
+              <div class="text-left">
+              <%= machine_comment.created_at.strftime('%Y/%m/%d') %> : <%= machine_comment.user.user_name %>
+              </div>
+            </th>
+            <td>
+              <div class="text-left">
+              : <%= machine_comment.comment %>
+              </div>
+            </td>
+              <td>
+                <div class="text-left">
+                <% if machine_comment.user == current_user %>
+                <%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete, class: "text-danger" %>
+                <% end %>
+                </div>
+              </td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+
