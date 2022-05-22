@@ -31,7 +31,7 @@ class Admin::MachinesController < ApplicationController
       flash[:success] = "変更しました。"
       redirect_to admin_machines_path
     else
-      render 'edit'
+      redirect_to edit_admin_machine_path
     end
   end
 

@@ -17,7 +17,7 @@ class Admin::UsersController < ApplicationController
       flash[:success] = "会員情報を変更しました"
       redirect_to admin_users_path
     else
-      render 'edit'
+      redirect_to edit_admin_user_path
     end
   end
 
