@@ -3,7 +3,7 @@ class Public::MachineCommentsController < ApplicationController
   def create #machine_machine_comments_path
     machine = Machine.find(params[:machine_id])
     comment = MachineComment.new(machine_comment_params)
-    comment.user_id = current_user.id
+    comment.user_id = current_user.id #|| current_user.admin?
     comment.machine_id = machine.id
     if comment.save
       redirect_to machine_path(params[:machine_id])

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :tel_number, presence: true
 
   def user_name
-    last_name + first_name
+    last_name + " " + first_name
   end
 
   def active_for_authentication?
