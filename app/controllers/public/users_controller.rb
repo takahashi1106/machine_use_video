@@ -14,7 +14,7 @@ class Public::UsersController < ApplicationController
       redirect_to user_path(current_user)
       flash[:success] = "会員情報を更新しました。"
     else
-      render 'edit'
+      redirect_to edit_user_path(current_user)
     end
   end
 

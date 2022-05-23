@@ -9,7 +9,7 @@ class Machine < ApplicationRecord
   validates :explanation, presence: true
   validates :genre_id,    presence: true
   validates :video,       presence: true
-
+  
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
