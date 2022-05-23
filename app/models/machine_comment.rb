@@ -3,5 +3,5 @@ class MachineComment < ApplicationRecord
   belongs_to :machine
   belongs_to :user
 
-  validates :comment, presence: true
+  validates :comment, length: { minimum: 1, maximum: 150 }
 end
