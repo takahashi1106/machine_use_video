@@ -47,7 +47,7 @@ class Public::UsersController < ApplicationController
   end
 
   def ensure_guest_user
-    if @user.user_name == "guestuser"
+    if @user.user_name == "guest user"
       flash[:alert] = 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
       redirect_to user_path(current_user)
     end
