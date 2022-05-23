@@ -2,7 +2,7 @@
   <div class="mt-5">
     <div class="row">
 
-      <div class='col-3'>
+      <div class='col-lg-3'>
         <%= render 'public/machines/search', search: @search %>
           <div class="card mt-3">
             <h6 class="card-header text-center font-weight-bold">ジャンル検索</h6>
@@ -16,7 +16,7 @@
           </div>
       </div>
 
-      <div class="col-8">
+      <div class="col-lg-9">
           <div class="d-flex flex-wrap align-items-center">
             <h3 class="text-center font-weight-bold">機械一覧</h3>
           </div>
@@ -24,9 +24,11 @@
                 <% @machines.each do |machine| %>
                   <div class="item-box card border-1 w-30 p-5">
                     <%= link_to machine.name, machine_path(machine.id) %></br>
-                      <div class="favorite_buttons_<%= machine.id %>">
-                      <%= render "public/favorites/btn", machine: machine %>
-                      </div></br>
+                      <% if current_user.admin == false %>
+                        <div class="favorite_buttons_<%= machine.id %>">
+                        <%= render "public/favorites/btn", machine: machine %>
+                        </div></br>
+                      <% end %>
                     コメント件数：<%= machine.machine_comments.count %></br>
                   </div>
                 <% end %>

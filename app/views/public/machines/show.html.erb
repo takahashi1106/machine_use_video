@@ -15,7 +15,9 @@
                 <tr><th>型式</th><td><%= @machine.name %></td></tr>
                 <tr><th>説明文</th><td><%= @machine.explanation %></td></tr>
                 <tr><th>ジャンル名</th><td><%= @machine.genre.name %></td></tr>
+                <% if current_user.admin == false %>
                 <tr></tr><th>いいね</th><td class="favorite_buttons_<%= @machine.id %>"><%= render "public/favorites/btn", machine: @machine %></td></tr>
+                <% end %>
               </tbody>
             </table>
           </div>

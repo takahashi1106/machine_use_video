@@ -24,39 +24,43 @@
       </div>
     </div>
 
+
+<%
+=begin
+%>
           <div class="mt-5">
             <%= render 'layouts/errors',obj: @error_comment %>
-            <div class="row">
-              <div class="col-lg-12">
-                <table>
-                  <tbody>
-                    <% if admin_signed_in? %>
-                      <% @machine.machine_comments.each do |machine_comment| %>
-                        <tr>
-                          <th>
-                            <div class="text-left">
-                              <%= machine_comment.created_at.strftime('%Y/%m/%d') %> : <%= machine_comment.user.user_name %>
-                            </div>
-                          </th>
-                            <td>
+              <div class="row">
+                <div class="col-lg-12">
+                  <table>
+                    <tbody>
+                      <% if admin_signed_in? %>
+                        <% @machine.machine_comments.each do |machine_comment| %>
+                          <tr>
+                            <th>
                               <div class="text-left">
-                              : <%= machine_comment.comment %>
+                                <%= machine_comment.created_at.strftime('%Y/%m/%d') %> : <%= machine_comment.user.user_name %>
                               </div>
-                            </td>
+                            </th>
                               <td>
                                 <div class="text-left">
-                                <%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete, "data-confirm" => '本当に削除しますか？',class: "text-danger" %>
+                                : <%= machine_comment.comment %>
                                 </div>
                               </td>
-                          </tr>
+                                <td>
+                                  <div class="text-left">
+                                  <%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete, "data-confirm" => '本当に削除しますか？',class: "text-danger" %>
+                                  </div>
+                                </td>
+                            </tr>
+                        <% end %>
                       <% end %>
-                    <% end %>
-                  </tbody>
-                </table>
-              </div>
-                <div class="col-lg-12">
-                  <%= render 'public/machine_comments/form' %>
+                    </tbody>
+                  </table>
                 </div>
-            </div>
+              </div>
           </div>
+<%
+=end
+%>
 </div>

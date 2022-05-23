@@ -4,16 +4,18 @@
       <div class="mt-5">
         <div class="row">
           <% @machines.each do |machine| %>
-            <div class="col-md-4">
+            <div class="col-lg-4">
               <% if machine.video.attached? %>
               <%= video_tag url_for(machine.video), size: "300x300", controls: true %></br>
               <% end %>
                 <div class="btn-group">
                   <div class="card-text">
                     型式 : <%= machine.name %>
-                    <div class="favorite_buttons_<%= machine.id %>">
-                    <%= render "public/favorites/btn", machine: machine %></br>
-                    </div>
+                    <% if current_user.admin == false %>
+                      <div class="favorite_buttons_<%= machine.id %>">
+                      <%= render "public/favorites/btn", machine: machine %></br>
+                      </div>
+                    <% end %>
                       <div class="d-flex justify-content-between align-items-center">
                       <%= machine.explanation %></br>
                       </div>
