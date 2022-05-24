@@ -7,31 +7,34 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ac2ec3dad2.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="text-center">
-    <%= render 'layouts/header' %>
-      <% if flash[:notice] %>
-      	<div class="alert alert-success text-center">
-        	<span id="notice"><%= flash[:notice] %></span>
-      	</div>
-      <% elsif flash[:success] %>
-      	<div class="alert alert-success text-center">
-        	<span id="success"><%= flash[:success] %></span>
-      	</div>
-      <% elsif flash[:alert] %>
-      	<div class="alert alert-danger text-center">
-      	  <span id="alert"><%= flash[:alert] %></span>
-      	</div>
-      <% end %>
-    <main>
-    <%= yield %>
-    </main>
+  <div class="image">
+    <body class="text-center">
+      <%= render 'layouts/header' %>
+        <% if flash[:notice] %>
+        	<div class="alert alert-success text-center">
+          	<span id="notice"><%= flash[:notice] %></span>
+        	</div>
+        <% elsif flash[:success] %>
+        	<div class="alert alert-success text-center">
+          	<span id="success"><%= flash[:success] %></span>
+        	</div>
+        <% elsif flash[:alert] %>
+        	<div class="alert alert-danger text-center">
+        	  <span id="alert"><%= flash[:alert] %></span>
+        	</div>
+        <% end %>
 
-    <%= render 'layouts/footer' %>
-  </body>
+      <main>
+      <%= yield %>
+      </main>
+
+      <%= render 'layouts/footer' %>
+    </body>
+  </div>
 </html>
