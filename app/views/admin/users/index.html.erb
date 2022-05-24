@@ -28,7 +28,9 @@
               <% end %>
             </tbody>
           </table>
-        <%= paginate @users, theme: 'bootstrap-5' %>
       </div>
     </div>
+      <ul class="pagination justify-content-center">
+      <%= paginate @users, theme: 'bootstrap-5' %>
+      </ul>
 </div>

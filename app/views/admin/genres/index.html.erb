@@ -26,8 +26,10 @@
               <% end %>
             </tbody>
           </table>
-          <%= paginate @genres, theme: 'bootstrap-5' %>
         </div>
       </div>
   </div>
+    <ul class="pagination justify-content-center">
+    <%= paginate @genres, theme: 'bootstrap-5' %>
+    </ul>
 </div>

@@ -22,7 +22,7 @@
           </div>
               <div class="items d-flex flex-wrap align-content-stretch">
                 <% @machines.each do |machine| %>
-                  <div class="item-box card border-1 w-30 p-5">
+                  <div class="item-box card border-1 w-40 p-5">
                     <%= link_to machine.name, machine_path(machine.id) %></br>
                       <% if current_user.admin == false %>
                         <div class="favorite_buttons_<%= machine.id %>">
@@ -33,9 +33,11 @@
                   </div>
                 <% end %>
               </div>
-          <%= paginate @machines, theme: 'bootstrap-5' %>
       </div>
 
     </div>
   </div>
+    <ul class="pagination justify-content-center">
+    <%= paginate @machines, theme: 'bootstrap-5' %>
+    </ul>
 </div>
