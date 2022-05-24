@@ -29,7 +29,9 @@
                         <%= render "public/favorites/btn", machine: machine %>
                         </div></br>
                       <% end %>
-                    コメント件数：<%= machine.machine_comments.count %></br>
+                      <div class="comments_count_<%= machine.id %>">
+                      コメント件数：<%= machine.machine_comments.count %>
+                      </div></br>
                   </div>
                 <% end %>
               </div>

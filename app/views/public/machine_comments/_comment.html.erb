@@ -1,6 +1,6 @@
   <table>
     <tbody>
-        <% @machine.machine_comments.each do |machine_comment| %>
+        <% machine.machine_comments.each do |machine_comment| %>
           <tr>
             <th>
               <div class="text-left">
@@ -15,7 +15,7 @@
               <td>
                 <div class="text-left">
                 <% if machine_comment.user == current_user || current_user.admin? %>
-                <%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete, class: "text-danger" %>
+                <%= link_to "削除", machine_machine_comment_path(machine_comment.machine, machine_comment), method: :delete, remote: true, class: "text-danger" %>
                 <% end %>
                 </div>
               </td>

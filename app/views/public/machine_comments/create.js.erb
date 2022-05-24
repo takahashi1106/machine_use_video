@@ -1,0 +1,4 @@
+$("#book_<%= @machine.id %> .comments-count").html("コメント数: <%= @machine.machine_comments.count %>");
+$(".comments_area").html("<%= j(render 'public/machine_comments/comment', machine: @machine) %>");
+<!--コメント入力後のコメント入力欄を空に-->
+$("textarea").val('');

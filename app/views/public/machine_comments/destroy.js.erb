@@ -1,0 +1,3 @@
+$(".comments_area").html("<%= j(render 'public/machine_comments/comment', machine: @machine) %>");
+<!--コメント入力後のコメント入力欄を空に-->
+$("textarea").val('');

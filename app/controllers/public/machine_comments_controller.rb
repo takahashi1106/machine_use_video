@@ -1,29 +1,29 @@
 class Public::MachineCommentsController < ApplicationController
 
   def create #machine_machine_comments_path
-    machine = Machine.find(params[:machine_id])
-    comment = MachineComment.new(machine_comment_params)
-    comment.user_id = current_user.id
-    comment.machine_id = machine.id
-    if comment.save
-      redirect_to machine_path(params[:machine_id])
-    else @error_comment = comment
-      @machine = Machine.find(params[:machine_id])
-      @machine_comment = MachineComment.new
-      render 'public/machines/show'
+    @machine = Machine.find(params[:machine_id])
+    @comment = MachineComment.new(machine_comment_params)
+    @comment.user_id = current_user.id
+    @comment.machine_id = @machine.id
+    unless  @comment.save
+      #redirect_to machine_path(params[:machine_id]) 非同期通信
+    #elsif @error_comment = comment
+      #@machine = Machine.find(params[:machine_id])
+      #@machine_comment = MachineComment.new
+      render 'error'
     end
   end
 
   def destroy #machine_machine_comment_path
+    @machine = Machine.find(params[:machine_id])
     comment = MachineComment.find(params[:id])
-    if user_signed_in?
-      comment.destroy
-      redirect_to machine_path(params[:machine_id])
-    elsif admin_signed_in?
-      comment.destroy
-      flash[:alert] = "削除しました。"
-      redirect_to admin_machine_path(params[:machine_id])
-    end
+    comment.destroy
+      #redirect_to machine_path(params[:machine_id]) 非同期通信
+
+    #elsif admin_signed_in? 管理者で不要
+      #comment.destroy
+      #flash[:alert] = "削除しました。"
+      #redirect_to admin_machine_path(params[:machine_id])
   end
 
   private
