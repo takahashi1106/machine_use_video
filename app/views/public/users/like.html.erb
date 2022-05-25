@@ -5,7 +5,7 @@
           <% @likes.each do |like| %>
             <div class="col-md-4">
               <% if like.video.attached? %>
-              <%= video_tag url_for(like.video), size: "300x300", controls: true %></br>
+              <%= video_tag url_for(like.video), controls: true, class: 'sized' %></br>
               <% end %>
                 <div class="btn-group">
                   <div class="card-text">

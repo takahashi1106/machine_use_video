@@ -5,7 +5,7 @@
           <% @machines.each do |machine| %>
             <div class="col-lg-4">
               <% if machine.video.attached? %>
-              <%= video_tag url_for(machine.video), size: "300x300", controls: true %></br>
+              <%= video_tag url_for(machine.video), controls: true, class: 'sized' %></br>
               <% end %>
                 <div class="btn-group">
                   <div class="card-text">
