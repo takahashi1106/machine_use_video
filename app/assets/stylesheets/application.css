@@ -14,9 +14,12 @@
  *= require_self
  */
 
-.image {
- background-image: url(road.jpg);
+.background-image {
+ background-image: url('images/road.jpg');
+ background-position: center;
  background-size: cover;
+ background-color:rgba(255,255,255,0.8);
+ opacity: 0.5;
 }
 
 
