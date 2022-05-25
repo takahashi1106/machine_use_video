@@ -14,14 +14,15 @@
  *= require_self
  */
 
-.background-image {
- background-image: url('images/road.jpg');
- background-position: center;
- background-size: cover;
- background-color:rgba(255,255,255,0.8);
- opacity: 0.5;
+.bg-image {
+  background-image: url('road.jpg');
+  background-position: center;
+  background-size: cover;
 }
-
+.bg-mask {
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+}
 
 body {
   display: flex;
