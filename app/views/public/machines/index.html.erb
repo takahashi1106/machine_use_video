@@ -23,7 +23,10 @@
           </div>
               <div class="d-flex flex-wrap align-content-stretch">
                 <% @machines.each do |machine| %>
-                  <div class="item-box card border-1 w-40 p-5">
+                  <div class="item-box card w-20 p-5">
+                    <% if machine.video.attached? %>
+                    <%= video_tag url_for(machine.video),controls: true, muted: true, class: "index-image" %>
+                    <% end %></br>
                     <%= link_to machine.name, machine_path(machine.id) %></br>
                       <% if current_user.admin == false %>
                         <div class="favorite_buttons_<%= machine.id %>">
