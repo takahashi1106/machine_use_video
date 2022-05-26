@@ -19,9 +19,10 @@
   background-position: center;
   background-size: cover;
 }
+
 .bg-mask {
   height: 100%;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.8);
 }
 
 main {
@@ -44,4 +45,12 @@ footer {
 .index-image{
   width: 100%;
   height: 100px;
+}
+
+.link {
+  color: green
+}
+
+.public-index-color {
+  color: black
 }

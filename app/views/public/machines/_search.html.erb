@@ -9,12 +9,9 @@
 <% if @machiness.present? %>
   <!--検索がヒットした場合-->
   <% @machiness.each do |machines| %>
-  <%= link_to machines.name, machine_path(machines.id) %>
+  <%= link_to machines.name, machine_path(machines.id), class: "public-index-color" %>
   <% end %>
 <% else %>
   <!--検索がヒットしなかった場合-->
   <p>検索結果はありません</p>
 <% end %>
-    <!--タグ検索-->
-    <%#= f.label :タグ %>
-    <%#= f.text_field :tag_list, value: @post.tag_list %>

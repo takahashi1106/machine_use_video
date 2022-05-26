@@ -17,7 +17,7 @@
     <tboddy>
       <% @machines.each do |machine| %>
         <tr>
-          <td><%= link_to machine.name, admin_machine_path(machine.id) %></td>
+          <td><%= link_to machine.name, admin_machine_path(machine.id), class: "link" %></td>
           <td><%= machine.explanation %></td>
           <td><%= machine.genre.name %></td>
         </tr>

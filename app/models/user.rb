@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :last_name,  presence: true
   validates :first_name, presence: true
   validates :email,      presence: true
-  validates :tel_number, presence: true
+  validates :tel_number, format: { with: /\A\d{3}[-]\d{4}[-]\d{4}\z/ }
 
   def user_name
     last_name + " " + first_name
