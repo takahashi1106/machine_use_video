@@ -12,19 +12,19 @@
             </tbody>
           </table>
 
-            <% if current_user.admin == false %>
+            <% if current_user.admin? == false %>
               <div class="row justify-content-center">
                 <div class="field form-group row">
-                  <div class="col-6">
-                    <% if @user.user_name!= "guest user" %>
+                  <% if @user.user_name!= "guest user" %>
+                    <div class="col-6">
                     <%= link_to '編集',edit_user_path(@user), class: 'btn btn-success' %>
-                  </div>
+                    </div>
                       <div class="col-6">
-                        <% if user_signed_in? && @user.id == current_user.id %>
-                        <%= link_to "退会", unsubscribe_user_path(current_user), class: "btn btn-danger" %>
-                        <% end %>
+                      <% if user_signed_in? && @user.id == current_user.id %>
+                      <%= link_to "退会", unsubscribe_user_path(current_user), class: "btn btn-danger" %>
+                      <% end %>
                       </div>
-                    <% end %>
+                  <% end %>
                 </div>
               </div>
 
