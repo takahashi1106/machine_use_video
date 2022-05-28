@@ -1,6 +1,5 @@
 class Public::MachinesController < ApplicationController
   before_action :authenticate_user!
-  #before_action :search
 
   def index #machines_path
     @machines = Machine.page(params[:page]).per(6)

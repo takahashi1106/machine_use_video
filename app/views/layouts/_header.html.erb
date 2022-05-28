@@ -9,6 +9,7 @@
             <ul class="navbar-nav ml-auto">
 
               <% if user_signed_in? %>
+              
               <li class="nav-item">
               <%= link_to user_path(current_user), class: 'nav-link text-light' do %>
               <i class="fas fa-user-alt"></i> <%= current_user.user_name %>
@@ -73,6 +74,7 @@
               </li>
 
               <% end %>
+              
             </ul>
           </div>
     </div>

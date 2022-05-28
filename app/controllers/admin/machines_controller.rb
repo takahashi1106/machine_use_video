@@ -1,6 +1,6 @@
 class Admin::MachinesController < ApplicationController
-  before_action :set_machine, only: [:show, :edit, :update]
   before_action :authenticate_admin!
+  before_action :set_machine, only: [:show, :edit, :update]
 
   def new #new_admin_machine_path
     @new_machine = Machine.new

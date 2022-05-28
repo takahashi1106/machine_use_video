@@ -9,41 +9,43 @@
               <td>
                 <div class="form-group">
                   <div class="form-inline">
-                    <%= f.text_field :last_name, class: "col-sm-5 form-control" %>
-                　　<%= f.text_field :first_name, class: "col-sm-5 form-control" %>
+                  <%= f.text_field :last_name, class: "col-sm-5 form-control" %>
+              　　<%= f.text_field :first_name, class: "col-sm-5 form-control" %>
                   </div>
                 </div>
               </td>
             </tr>
-          <tr>
-            <td>メールアドレス</td>
-            <td>
-              <div class="form-group">
-                <div class="form-inline">
+            <tr>
+              <td>メールアドレス</td>
+              <td>
+                <div class="form-group">
+                  <div class="form-inline">
                   <%= f.text_field :email, class: "col-sm-10 form-control" %>
+                  </div>
                 </div>
-              </div>
-              </td>
+                </td>
             </tr>
             <tr>
               <td>電話番号</br>(11桁ハイフン有)</td>
               <td>
                 <div class="form-group">
                   <div class="form-inline">
-                    <%= f.text_field :tel_number, class: "col-sm-5 form-control" %>
+                  <%= f.text_field :tel_number, class: "col-sm-5 form-control" %>
                   </div>
                 </div>
               </td>
             </tr>
+            <tr>
               <td>会員ステータス</td>
               <td>
                 <div class="form-group">
                   <div class="form-inline">
-                    <%= f.radio_button :is_deleted, false %>
-                  　<%= f.label :有効 %>
-                    　<%= f.radio_button :is_deleted, true %>
-                  　<%= f.label :退会 %>
-                　  </div>
+                  <%= f.radio_button :is_deleted, false %>
+                　<%= f.label :有効 %>
+
+                  <%= f.radio_button :is_deleted, true %>
+                　<%= f.label :退会 %>
+                　</div>
                 </div>
               </td>
             </tr>
@@ -52,13 +54,12 @@
               <td>
                 <div class="row justify-content-center">
                   <div class="col-1">
-                   <%= f.submit '変更' ,class: "btn btn-primary" %>
+                  <%= f.submit '変更' ,class: "btn btn-primary" %>
                   </div>
                     <div class="col-7">
-                      <%= link_to "戻る", admin_user_path, class: "btn btn-secondary" %>
+                    <%= link_to "戻る", admin_user_path, class: "btn btn-secondary" %>
                     </div>
                 </div>
-
               </td>
             </tr>
           </tbody>

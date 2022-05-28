@@ -1,28 +1,28 @@
-  <div class="container">
-    <h2 class="pt-5"><%= @genre.name %>画面</h2>
-      <div class="mt-5">
-        <div class="row">
-          <% @machines.each do |machine| %>
-            <div class="col-lg-4">
-              <% if machine.video.attached? %>
-              <%= video_tag url_for(machine.video), controls: true, class: 'sized' %></br>
-              <% end %>
-                <div class="btn-group">
-                  <div class="card-text">
-                    型式 : <%= machine.name %>
-                    <% if current_user.admin == false %>
-                      <div class="favorite_buttons_<%= machine.id %>">
-                      <%= render "public/favorites/btn", machine: machine %></br>
-                      </div>
-                    <% end %>
-                      <div class="d-flex justify-content-between align-items-center">
-                      <%= machine.explanation %></br>
-                      </div>
-                  </div>
+<div class="container">
+  <h2 class="pt-5"><%= @genre.name %>画面</h2>
+    <div class="mt-5">
+      <div class="row">
+        <% @machines.each do |machine| %>
+          <div class="col-lg-4">
+            <% if machine.video.attached? %>
+            <%= video_tag url_for(machine.video), controls: true, class: 'sized' %></br>
+            <% end %>
+              <div class="btn-group">
+                <div class="card-text">
+                型式 : <%= machine.name %>
+                  <% if current_user.admin == false %>
+                    <div class="favorite_buttons_<%= machine.id %>">
+                    <%= render "public/favorites/btn", machine: machine %></br>
+                    </div>
+                  <% end %>
+                    <div class="d-flex justify-content-between align-items-center">
+                    <%= machine.explanation %></br>
+                    </div>
                 </div>
-            </div>
-          <% end %>
-        </div>
+              </div>
+          </div>
+        <% end %>
       </div>
-  </div>
+    </div>
+</div>
 

@@ -1,26 +1,26 @@
-  <div class="container">
-    <h2 class="pt-5">いいね画面</h2>
-      <div class="mt-5">
-        <div class="row">
-          <% @likes.each do |like| %>
-            <div class="col-md-4">
-              <% if like.video.attached? %>
-              <%= video_tag url_for(like.video), controls: true, class: 'sized' %></br>
-              <% end %>
-                <div class="btn-group">
-                  <div class="card-text">
-                    <%= like.genre.name %> : <%= like.name %>
-                      <div class="favorite_buttons_<%= like.id %>">
-                      <%= render "public/favorites/btn", machine: like %>
-                      </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                        <%= like.explanation %>
-                        </div>
-                  </div>
-                </div>
-            </div>
+<div class="container">
+  <h2 class="pt-5">いいね画面</h2>
+    <div class="mt-5">
+      <div class="row">
+        <% @likes.each do |like| %>
+          <div class="col-md-4">
+          <% if like.video.attached? %>
+          <%= video_tag url_for(like.video), controls: true, class: 'sized' %></br>
           <% end %>
-        </div>
+            <div class="btn-group">
+              <div class="card-text">
+              <%= like.genre.name %> : <%= like.name %>
+                <div class="favorite_buttons_<%= like.id %>">
+                <%= render "public/favorites/btn", machine: like %>
+                </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                  <%= like.explanation %>
+                  </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-  </div>
+    </div>
+</div>
 

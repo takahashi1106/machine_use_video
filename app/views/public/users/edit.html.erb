@@ -4,56 +4,57 @@
       <%= render 'layouts/errors', obj: @user %>
         <div class="row justify-content-center">
           <%= form_with model: @user do |f| %>
+          
             <div class="field form-group row">
               <div class="col-5">
               <%= f.label :性 %>
               </div>
-              <div class="col-3">
-              <%= f.text_field :last_name %>
-              </div>
+                <div class="col-3">
+                <%= f.text_field :last_name %>
+                </div>
             </div>
 
-              <div class="field form-group row">
-                <div class="col-5">
-                <%= f.label :名 %>
-                </div>
+            <div class="field form-group row">
+              <div class="col-5">
+              <%= f.label :名 %>
+              </div>
                 <div class="col-3">
                 <%= f.text_field :first_name %>
                 </div>
+            </div>
+
+            <div class="field form-group row">
+              <div class="col-5">
+              <%= f.label :メール %>
               </div>
-
-                <div class="field form-group row">
-                  <div class="col-5">
-                  <%= f.label :メール %>
-                  </div>
-                  <div class="col-3">
-                  <%= f.text_field :email %>
-                  </div>
+                <div class="col-3">
+                <%= f.text_field :email %>
                 </div>
+            </div>
 
-                  <div class="field form-group row">
-                    <div class="col-5">
-                    <%= f.label :電話番号 %></br>(11桁ハイフン有)
-                    </div>
-                    <div class="col-3">
-                    <%= f.text_field :tel_number %>
-                    </div>
+            <div class="field form-group row">
+              <div class="col-5">
+              <%= f.label :電話番号 %></br>(11桁ハイフン有)
+              </div>
+                <div class="col-3">
+                <%= f.text_field :tel_number %>
+                </div>
+            </div>
+
+            <div class="mt-4">
+              <div class="row justify-content-center">
+                <div class="field form-group row">
+                  <div class="col-6">
+                  <%= f.submit '保存', class: 'btn btn-primary' %>
                   </div>
-
-                    <div class="mt-4">
-                      <div class="row justify-content-center">
-                      <div class="field form-group row">
-                        <div class="col-6">
-                        <%= f.submit '保存', class: 'btn btn-primary' %>
-                        </div>
-                          <div class="col-6">
-                          <%= link_to "戻る", user_path(current_user), class: 'btn btn-secondary' %>
-                          </div>
-                      </div>
+                    <div class="col-6">
+                    <%= link_to "戻る", user_path(current_user), class: 'btn btn-secondary' %>
                     </div>
-                      </div>
+                </div>
+              </div>
+            </div>
 
           <% end %>
-      </div>
+        </div>
     </div>
 </div>
