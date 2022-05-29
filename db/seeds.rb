@@ -11,9 +11,9 @@ Admin.find_or_create_by!(
     admin.password = ENV['ADMIN_PASSWORD']
 end
 
-genres = %w(発電機 草刈機 削岩機 溶接機 重機 切断機 水中ポンプ) # ポイント1
+genres = %w(発電機 草刈機 削岩機 溶接機 重機 切断機 水中ポンプ)
 genres.each do |genre|
-  Genre.find_or_create_by(name: genre) # ポイント2
+  Genre.find_or_create_by(name: genre)
 end
 
 users = [
