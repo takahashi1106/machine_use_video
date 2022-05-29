@@ -4,7 +4,7 @@ class Admin::GenresController < ApplicationController
 
   def index #admin_genres_path
     @new_genre = Genre.new
-    @genres = Genre.page(params[:page]).per(10)
+    @genres = Genre.page(params[:page]).per(6)
   end
 
   def create #admin_genres_path
