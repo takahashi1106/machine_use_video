@@ -30,6 +30,15 @@ class Admin::GenresController < ApplicationController
     end
   end
 
+  def destroy #admin_genre_path
+    @genres = Genre.find(params[:id])
+    if admin_signed_in?
+      flash[:alert] = "削除しました。"
+      @genres.destroy
+      redirect_to admin_genres_path
+    end
+  end
+
   private
 
   def genre_params

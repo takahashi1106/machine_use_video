@@ -27,7 +27,7 @@ namespace :admin do
   resources :machines,only: [:new, :create, :index ,:show, :edit, :update] do
   end
 
-  resources :genres,only: [:index, :create ,:edit, :update] do
+  resources :genres,only: [:index, :create, :edit, :update, :destroy] do
   end
 end
 
