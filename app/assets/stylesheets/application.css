@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import "skippr";
 
 .bg-image {
   background-image: url('crane.jpg');
@@ -53,4 +54,25 @@ footer {
 
 .public-index-color {
   color: black
+}
+
+
+#container {
+  height: 300px;
+}
+
+.image1 {
+  background-image: url(test1.jpg);
+}
+.image2 {
+  background-image: url(test2.jpg);
+}
+.image3 {
+  background-image: url(test3.jpg);
+}
+.image4 {
+  background-image: url(test4.jpg);
+}
+.image5 {
+  background-image: url(test5.jpg);
 }
