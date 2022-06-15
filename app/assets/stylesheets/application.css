@@ -28,6 +28,7 @@
 
 main {
   min-height: calc(100vh - 100px);
+
 }
 
 footer {
@@ -53,6 +54,11 @@ footer {
 
 .public-index-color {
   color: black
+}
+
+.pagination {
+  padding-bottom: 20px;
+  margin-bottom: 0px
 }
 
 
