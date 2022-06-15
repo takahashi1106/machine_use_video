@@ -28,7 +28,6 @@
 
 main {
   min-height: calc(100vh - 100px);
-  padding-bottom: 30px;
 }
 
 footer {
@@ -57,13 +56,13 @@ footer {
 }
 
 
-#container {
-  height: 300px;
+#container{
+  background-image: url(test1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 600px;
 }
 
-.image1 {
-  background-image: url(test1.jpg);
-}
 .image2 {
   background-image: url(test2.jpg);
 }
