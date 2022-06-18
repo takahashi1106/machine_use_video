@@ -1,4 +1,5 @@
 class Public::MachineCommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def create #machine_machine_comments_path
     @machine = Machine.find(params[:machine_id])
