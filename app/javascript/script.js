@@ -14,9 +14,9 @@ $(document).ready(function () {
     // ナビゲーション矢印の表示(trueで表示)
     arrows : true,
     // スライドショーの自動再生(falseで自動再生なし)
-    autoPlay : true,
+    autoPlay : false,
     // 自動再生時のスライド切替間隔(ミリ秒)
-    autoPlayDuration : 3000,
+    autoPlayDuration : 5000,
     // キーボードの矢印キーによるスライド送りの設定(trueで有効)
     keyboardOnAlways : true,
     // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)

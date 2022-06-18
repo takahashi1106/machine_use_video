@@ -23,7 +23,7 @@
 
 .bg-mask {
   height: 100%;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.7);
 }
 
 main {
@@ -66,21 +66,23 @@ footer {
 
 
 #container{
-  background-image: url(test1.jpg);
+  background-image: url(img2.jpg);
   background-position: center;
   background-size: cover;
   height: 600px;
 }
 
-.image2 {
-  background-image: url(test2.jpg);
+#theTarget{
+  background: rgba(255,255,255,0.2);
 }
+
 .image3 {
-  background-image: url(test3.jpg);
+  background-image: url(img3.jpg);
 }
-.image4 {
-  background-image: url(test4.jpg);
-}
-.image5 {
-  background-image: url(test5.jpg);
+
+.container1 {
+  background-image: url(img4.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 600px;
 }
